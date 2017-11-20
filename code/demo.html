@@ -337,6 +337,28 @@
   </script>
   <script src="./assets/main.js" remote="yes" ignoreapd="1"></script>
 
+  <script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js' remote="yes" ignoreapd="1"></script>
+  <script src="/webapp/share/weixinapi.js" remote="yes" ignoreapd="1"></script>
+  <script>
+    weixinapp.init();
+    // 需要分享的内容，请放到ready里
+    wx.ready(function () {
+      sharedata = {
+        <TRS_DOCUMENTS id="shareConfig-xqs">
+          title: '<TRS_DOCUMENT AUTOLINK="false" FIELD="doctitle"></TRS_DOCUMENT>',
+          desc: '<TRS_DOCUMENT AUTOLINK="false" FIELD="docabstract"></TRS_DOCUMENT>',
+          link: 'http://www.foshannews.net/zt/2017zt/wx/xqslxms/',
+          imgUrl: '<TRS_APPENDIX INDEX="0" AUTOLINK="FALSE" MODE="PIC" FIELD="_RECURL" UrlIsAbs="true" UPLOAD="true"></TRS_APPENDIX>',
+        </TRS_DOCUMENTS>
+        success: function () {},
+        cancel: function () {}
+      };
+      wx.onMenuShareAppMessage(sharedata);
+      wx.onMenuShareTimeline(sharedata);
+    });
+
+  </script>
+
 </body>
 
 </html>
