@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1,
+  maximum-scale=1,
+  minimum-scale=1,
+  user-scalable=no">
+  <script>
+    ! function (n, e) {
+      var t = n.documentElement,
+        i = "orientationchange" in window ?
+        "orientationchange" : "resize",
+        d = function () {
+          var n = t.clientWidth;
+          n > 640 && (n = 640), n && (t.style.fontSize = 8 * (n / 320) + "px")
+        };
+      n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
+    }(document, window);
+  </script>
+  <!-- 优先使用 IE 最新版本和 Chrome: -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!-- 网页作者： -->
+  <meta name="author" content="designed by Sifan;css+html by AND,2017-11.foshan,MI.8723" />
+  <!-- 搜索引擎抓取： -->
+  <meta name="robots" content="index,follow" />
+  <!-- iOS 设备 添加到主屏后的标题（iOS 6 新增）： -->
+  <meta name="apple-mobile-web-app-title" content="开发手足口病家庭监护平台">
+  <!-- 删除默认的苹果工具栏和菜单栏 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏： -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）： -->
+  <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+  <!-- 设置苹果工具栏颜色： -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- 忽略页面中的数字识别为电话，忽略email识别： -->
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <!-- 启用360浏览器的极速模式(webkit)： -->
+  <meta name="renderer" content="webkit">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓： -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="stylesheet" href="./assets/css/reset.min.css" remote="yes" ignoreapd="1">
+  <link rel="stylesheet" href="./assets/css/style.min.css" remote="yes" ignoreapd="1">
+  <link rel="stylesheet" href="http://www.foshannews.net/js/animate2.min.css" remote="yes" ignoreapd="1">
+  <title>
+    <TRS_CURPAGE AUTOLINK="false" ONLY="true">当前频道</TRS_CURPAGE>
+  </title>
+
+</head>
+
+<body>
+  <!-- loading 块 start-->
+  <div id="loading">
+    <div class="wrapper">
+      <img src="./assets/loading.png" remote="yes" ignoreapd="1" class="infinite myRotate">
+      <p class="percent"></p>
+    </div>
+  </div>
+  <!-- loading 块 end-->
+
+  <!-- 正文 书本 start -->
+  <article id="book">
+    <div id="cover" class="turn-page">
+      <img src="./assets/cover/cover-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/cover/cover-gif.gif" remote="yes" ignoreapd="1" class="gif">
+      <a href="http://www.foshannews.net/" class="fadeIn animated technology">
+        <img src="./assets/technology-support.png" remote="yes" ignoreapd="1">
+      </a>
+      <div class="slideInUp next animated ">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p1" class="turn-page">
+      <img src="./assets/p1/p1-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img data-src="./assets/p1/p1gif.gif" remote="yes" ignoreapd="1" class="gif lazyload">
+      <img src="./assets/p1/p1-title.png" class="pic title bounceInDown animated " remote="yes" ignoreapd="1">
+      <img src="./assets/p1/p1-map.png" class="pic map fadeIn animated " remote="yes" ignoreapd="1">
+      <img src="./assets/p1/p1-bottom.png" class="pic bottom bounceInLeft animated " remote="yes" ignoreapd="1">
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p2" class="turn-page">
+      <img src="./assets/p2/p2-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <div class="title sec">
+        <img src="./assets/p2/p2-title.png" remote="yes" ignoreapd="1" class="picInSection bounceInDown animated ">
+        <img src="./assets/p2/p2gif.gif" remote="yes" ignoreapd="1" class="gif bounceInDown animated">
+      </div>
+      <img src="./assets/p2/p2-word.png" remote="yes" ignoreapd="1" class="pic word bounceInLeft animated">
+      <img src="./assets/p2/p2-1.png" remote="yes" ignoreapd="1" class="pic section1 bounceInLeft animated">
+      <img src="./assets/p2/p2-2.png" remote="yes" ignoreapd="1" class="pic section2 bounceInRight animated">
+      <img src="./assets/p2/p2-3.png" remote="yes" ignoreapd="1" class="pic section3 bounceInLeft animated">
+      <img src="./assets/p2/p2-4.png" remote="yes" ignoreapd="1" class="pic section4 bounceInRight animated">
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p3" class="turn-page">
+      <img src="./assets/p3/p3-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/p3/p3-title.png" class="pic  bounceInDown animated title" remote="yes" ignoreapd="1">
+      <img src="./assets/p3/p3-1.png" remote="yes" ignoreapd="1" class="pic bounceInRight animated section1">
+      <img src="./assets/p3/p3-2.png" remote="yes" ignoreapd="1" class="pic bounceInLeft animated section2">
+      <img src="./assets/p3/p3-3.png" remote="yes" ignoreapd="1" class="pic bounceInRight animated section3">
+      <img src="./assets/p3/p3-4.png" remote="yes" ignoreapd="1" class="pic bounceInLeft animated section4">
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p4" class="turn-page">
+      <img src="./assets/p4~p5-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/p4/p4-title.png" class="pic title bounceInDown animated" remote="yes" ignoreapd="1">
+      <div class="section1 sec">
+        <img src="./assets/p4/p4-1.png" class="picInSection fadeInRight animated" remote="yes" ignoreapd="1">
+        <a class="btn-kuiguang btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <img src="./assets/p4/p4-2.png" remote="yes" ignoreapd="1" class="pic section2 fadeInDown animated">
+      <div class="section3 sec">
+        <img src="./assets/p4/p4-3.png" remote="yes" ignoreapd="1" class="picInSection fadeInLeft animated">
+        <a class="btn-sanhu btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p5" class="turn-page">
+      <img src="./assets/p4~p5-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/p5/p5-title.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated title">
+      <img src="./assets/p5/p5-1.png" class="pic section1 fadeInRight animated" remote="yes" ignoreapd="1">
+      <div class="sec section2">
+        <img src="./assets/p5/p5-2.png" class="picInSection fadeInRight animated" remote="yes" ignoreapd="1">
+        <a class="btn-dake btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <img src="./assets/p5/p5-3.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated section3">
+      <div class="sec section4">
+        <img src="./assets/p5/p5-4.png" class="picInSection fadeInRight animated" remote="yes" ignoreapd="1">
+        <a class="btn-sifeng btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p6" class="turn-page">
+      <img src="./assets/p6/p6-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/p6/p6-title.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated title">
+      <img src="./assets/p6/p6-1.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated section1">
+      <div class="sec section2">
+        <img src="./assets/p6/p6-2.png" class="picInSection fadeInRight animated" remote="yes" ignoreapd="1">
+        <a class="btn-shiyanyan btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <img src="./assets/p6/p6-3.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated section3">
+      <div class="sec section4">
+        <img src="./assets/p6/p6-4.png" remote='yes' ignoreapd="1" class="picInSection animated fadeInLeft">
+        <a class="btn-jiulongyan btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <img src="./assets/p6/p6-5.png" remote='yes' ignoreapd="1" class="pic bounceInDown animated section5">
+      <div class="sec section6">
+        <img src="./assets/p6/p6-6.png" remote='yes' ignoreapd="1" class="picInSection fadeInRight animated">
+        <a class="btn-yungu btn-details jackInTheBox animated">
+          <img src="./assets/btn-details.png" remote='yes' ignoreapd="1" width="100%">
+        </a>
+      </div>
+      <div class="slideInUp next animated">
+        <img class="next-word pulse animated" src="./assets/next.png" width="50%" remote="yes" ignoreapd="1">
+      </div>
+    </div>
+    <div id="p7" class="turn-page">
+      <img src="./assets/p7/p7-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
+      <img src="./assets/p7/p7-title.png" remote="yes" ignoreapd="1" class="pic bounceInDown animated title">
+      <img src="./assets/p7/p7-postcard.png" remote="yes" ignoreapd="1" class="pic fadeIn animated postcard">
+      <div class="sec-btn sec">
+        <div class="btn-group btn">
+          <a class="btn-again slideInLeft animated">
+            <img src="./assets/btn-again.png" width="100%" remote="yes" ignoreapd="1">
+          </a>
+          <a href="http://api.map.baidu.com/marker?location=22.932411,112.984168&title=西樵山&content=西樵山旅游区&output=html" class="btn-go slideInRight animated">
+            <img src="./assets/go.png" width="100%" remote="yes" ignoreapd="1">
+          </a>
+        </div>
+      </div>
+      <a href="http://www.foshannews.net/" class="fadeIn animated technology">
+        <img src="./assets/technology-support.png" remote="yes" ignoreapd="1">
+      </a>
+    </div>
+  </article>
+  <!-- 正文 书本 end -->
+
+  <!-- 介绍页 start   -->
+  <div class="mask fadeInLeft animated">
+    <a class="details-back" @touchstart=close>
+      <img src="./assets/details/btn-back-indetails.png" remote="yes" ignoreapd="1" width="100%">
+    </a>
+    <div class="pic">
+      <img :src=src remote='yes' ignoreapd='1' width="auto">
+    </div>
+    <div class="next-prev-group" style="display: none">
+      <a class="btn-prev animated" @touchstart='prev' :disable='isPrev'>
+        <img src="./assets/details/btn-prev-indestails.png" remote="yes" ignoreapd="1" width="100%">
+      </a>
+      <a class="btn-next animated" @touchstart='next' :disable='isNext'>
+        <img src="./assets/details/btn-next-indestails.png" remote="yes" ignoreapd="1" width="100%">
+      </a>
+    </div>
+    <div class="word">
+      <div v-if='index===null'></div>
+      <TRS_DOCUMENTS id="intro_in_details">
+        <div class='intro intro<TRS_Document FIELD="subdoctitle" LINKALT="false" AUTOLINK="false" ></TRS_DOCUMENT>' v-else-if='index==<TRS_Document FIELD="subdoctitle" LINKALT="false" AUTOLINK="false" ></TRS_DOCUMENT>'>
+          <TRS_DOCUMENT FIELD="DOCHTMLCON"></TRS_DOCUMENT>
+        </div>
+      </TRS_DOCUMENTS>
+      <div v-else></div>
+    </div>
+  </div>
+  <!-- 介绍页 end   -->
+
+  <a class="music">
+    <img src="./assets/music2.png" width="100%" remote="yes" ignoreapd="1">
+  </a>
+  <audio src="./assets/music.mp3" id="music" preload="preload" autoplay="autoplay" loop="loop" remote="yes" ignoreapd="1"></audio>
+
+  <script src="http://www.foshannews.net/js/jquery-3.2.1.min.js" remote="yes" ignoreapd="1"></script>
+  <script src="http://www.foshannews.net/js/lodash.min.js" remote="yes" ignoreapd="1"></script>
+  <script src="http://www.foshannews.net/js/vue.min.js" remote="yes" ignoreapd="1"></script>
+  <script src="http://www.foshannews.net/js/message.min.js" remote="yes" ignoreapd="1"></script>
+  <script src="http://www.foshannews.net/js/resLoader.js" remote="yes" ignoreapd="1"></script>
+  <script src="./assets/turn.min.js" remote="yes" ignoreapd="1"></script>
+
+  <script>
+    //获取介绍数据
+    var intros = [] 
+    <TRS_DOCUMENTS id = "intro_in_details" >
+      intros.push({
+        index: '<TRS_Document FIELD="subdoctitle" LINKALT="false" AUTOLINK="false" ></TRS_DOCUMENT>',
+        img: '<TRS_APPENDIX INDEX="0" AUTOLINK="FALSE" MODE="PIC" FIELD="_RECURL" UrlIsAbs="true" UPLOAD="true"></TRS_APPENDIX>',
+      }); 
+    </TRS_DOCUMENTS>
+    console.log(intros);
+    var resources=[
+        "./assets/cover/cover-bg.jpg",
+        "./assets/cover/cover-gif.gif",
+        "./assets/next.png",
+        "./assets/next-bg.png",
+        "./assets/p1/p1-bg.jpg",
+        "./assets/p1/p1-title.png",
+        "./assets/p1/p1-map.png",
+        "./assets/p1/p1-bottom.png",
+        "./assets/p1/p1gif.gif",
+        "./assets/p2/p2-bg.jpg",
+        "./assets/p2/p2gif.gif",
+        "./assets/p2/p2-title.png",
+        "./assets/p2/p2-4.png",
+        "./assets/p2/p2-3.png",
+        "./assets/p2/p2-2.png",
+        "./assets/p2/p2-1.png",
+        "./assets/p2/p2-word.png",
+        "./assets/p3/p3-bg.jpg",
+        "./assets/p3/p3-title.png",
+        "./assets/p3/p3-1.png",
+        "./assets/p3/p3-2.png",
+        "./assets/p3/p3-3.png",
+        "./assets/p3/p3-4.png",
+        "./assets/p4~p5-bg.jpg",
+        "./assets/p4/p4-title.png",
+        "./assets/p4/p4-1.png",
+        "./assets/p4/p4-2.png",
+        "./assets/p4/p4-3.png",
+        "./assets/p5/p5-title.png",
+        "./assets/p5/p5-1.png",
+        "./assets/p5/p5-2.png",
+        "./assets/p5/p5-3.png",
+        "./assets/p5/p5-4.png",
+        "./assets/p6/p6-bg.jpg",
+        "./assets/p6/p6-1.png",
+        "./assets/p6/p6-2.png",
+        "./assets/p6/p6-3.png",
+        "./assets/p6/p6-4.png",
+        "./assets/p6/p6-5.png",
+        "./assets/p6/p6-6.png",
+        "./assets/p6/p6-title.png",
+        "./assets/p7/p7-title.png",
+        "./assets/p7/p7-postcard.png",
+        "./assets/p7/p7-bg.jpg",
+        "./assets/technology-support.png",
+        "./assets/go.png",
+        "./assets/btn-details.png",
+        "./assets/btn-again.png",
+        "http://www.foshannews.net/js/jquery-1.12.3.min.js",
+        "http://www.foshannews.net/js/lodash.min.js",
+        "http://www.foshannews.net/js/vue.min.js",
+        "http://www.foshannews.net/js/message.min.js",
+        "./assets/turn.min.js",
+        './assets/music.mp3'
+      ];
+    $(intros).each(function(i,e){
+      resources.push(e.img);
+    })
+    //预加载
+    var loader = new resLoader({
+      resources: resources,
+      onStart: function(total) {
+        console.log("start:" + total);
+      },
+      onProgress: function(current, total) {
+        var percent = parseInt(Math.round(current / total * 10000) / 100);
+        percent=percent>98?98:percent;
+        $('#loading .percent').text(percent+'%');
+        // $('.progresstext').text(percent+'%');
+      },
+      onComplete: function(total) {
+        completedJs();
+        $("#loader").addClass("hidden");
+        $(".start").removeClass("hidden");
+      }
+    });
+
+    loader.start();
+
+  </script>
+  <script src="./assets/main.js" remote="yes" ignoreapd="1"></script>
+
+</body>
+
+</html>
