@@ -92,7 +92,7 @@ function completedJs() {
     gradients: true,
     elevation: 50,
     duration: 500,
-    turnCorners: "bl,br",
+    turnCorners: "tl,br",
     when: {
       turning: function(event, page, view) {
         // console.log(event, page, view);
@@ -165,7 +165,6 @@ function completedJs() {
     var times = 0;
     page = translatePageName(page);
     var elements = findElements(page);
-    var prevEle;
     console.log(elements);
     _.each(
       elements,
@@ -213,17 +212,14 @@ function completedJs() {
   });
 
   //详细介绍页
-  function showIntro(index) {
-    $(".mask .pic img").attr(
-      "src",
-      _.find(intros, function(val) {
-        return parseInt(val.index) === index;
-      }).img
-    );
-    $(".mask .word .intro").each(function(i, ele) {
-      if ($(ele).hasClass("intro" + index)) {
+  function showIntro(index){
+    $('.mask .pic img').attr('src' , _.find(intros, function(val) {
+      return parseInt(val.index) === index;
+    }).img);
+    $('.mask .word .intro').each(function(i,ele){
+      if($(ele).hasClass('intro'+index)){
         $(ele).show();
-      } else {
+      } else{
         $(ele).hide();
       }
     });
@@ -241,7 +237,7 @@ function completedJs() {
   ];
   _.each(btnArgs, function(val, i) {
     $("body").on("touchstart", val, function() {
-      showIntro(i + 1);
+      showIntro(i+1);
       $(".mask").show();
     });
   });
@@ -256,13 +252,16 @@ function completedJs() {
     }, 800);
   });
 
+
+
+
   //结束loading
   // var percent = 99;
   // setInterval(function() {
   //   percent++;
   //   $("#loading .percent").text(percent + "%");
   //   if (percent === 100) {
-  $("#loading").fadeOut();
+      $("#loading").fadeOut();
   //   }
   // }, 500);
 }
