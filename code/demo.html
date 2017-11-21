@@ -194,10 +194,14 @@
     </div>
     <div id="p7" class="turn-page">
       <img src="./assets/p7/p7-bg.jpg" class="page-bg" remote="yes" ignoreapd="1">
-      <img src="./assets/p7/p7-title.png" remote="yes" ignoreapd="1" class="pic bounceInDown animated title">
-      <img src="./assets/p7/p7-postcard.png" remote="yes" ignoreapd="1" class="pic fadeIn animated postcard">
+      <img src="./assets/p7/p7-title.png" remote="yes" ignoreapd="1" class="pic fadeIn animated title">
+      <img src="./assets/p7/p7-postcard.png" remote="yes" ignoreapd="1" class="postcard fadeIn animated pic">
+      <input type="text" class="input fadeIn animated" placeholder="输入你的名字">
       <div class="sec-btn sec">
         <div class="btn-group btn">
+          <a class="btn-send slideInRight animated">
+            <img src="./assets/p7/p7-send.png" width="100%" remote="yes" ignoreapd="1">
+          </a>
           <a class="btn-again slideInLeft animated">
             <img src="./assets/btn-again.png" width="100%" remote="yes" ignoreapd="1">
           </a>
@@ -221,7 +225,7 @@
     <div class="pic">
       <img :src=src remote='yes' ignoreapd='1' width="auto">
     </div>
-    
+
     <div class="word">
       <TRS_DOCUMENTS id="intro_in_details">
         <div class='intro intro<TRS_Document FIELD="subdoctitle" LINKALT="false" AUTOLINK="false" ></TRS_DOCUMENT>'>
@@ -237,10 +241,14 @@
   </a>
   <audio src="./assets/music.mp3" id="music" preload="preload" autoplay="autoplay" loop="loop" remote="yes" ignoreapd="1"></audio>
 
+  <!-- 分享页 -->
+  <div class="share fadeIn animated">
+    <img src="./assets/p7/p7-share.png" remote="yes" ignoreapd="1" width="100%">
+  </div>
+
   <script src="http://www.foshannews.net/js/jquery-3.2.1.min.js" remote="yes" ignoreapd="1"></script>
   <script src="http://www.foshannews.net/js/lodash.min.js" remote="yes" ignoreapd="1"></script>
   <!-- <script src="http://www.foshannews.net/js/vue.min.js" remote="yes" ignoreapd="1"></script> -->
-  <script src="http://www.foshannews.net/js/message.min.js" remote="yes" ignoreapd="1"></script>
   <script src="http://www.foshannews.net/js/resLoader.js" remote="yes" ignoreapd="1"></script>
   <script src="./assets/turn.min.js" remote="yes" ignoreapd="1"></script>
 
@@ -254,78 +262,82 @@
       }); 
     </TRS_DOCUMENTS>
     console.log(intros);
-    var resources=[
-        "./assets/cover/cover-bg.jpg",
-        "./assets/cover/cover-gif.gif",
-        "./assets/next.png",
-        "./assets/next-bg.png",
-        "./assets/p1/p1-bg.jpg",
-        "./assets/p1/p1-title.png",
-        "./assets/p1/p1-map.png",
-        "./assets/p1/p1-bottom.png",
-        "./assets/p1/p1gif.gif",
-        "./assets/p2/p2-bg.jpg",
-        "./assets/p2/p2gif.gif",
-        "./assets/p2/p2-title.png",
-        "./assets/p2/p2-4.png",
-        "./assets/p2/p2-3.png",
-        "./assets/p2/p2-2.png",
-        "./assets/p2/p2-1.png",
-        "./assets/p2/p2-word.png",
-        "./assets/p3/p3-bg.jpg",
-        "./assets/p3/p3-title.png",
-        "./assets/p3/p3-1.png",
-        "./assets/p3/p3-2.png",
-        "./assets/p3/p3-3.png",
-        "./assets/p3/p3-4.png",
-        "./assets/p4~p5-bg.jpg",
-        "./assets/p4/p4-title.png",
-        "./assets/p4/p4-1.png",
-        "./assets/p4/p4-2.png",
-        "./assets/p4/p4-3.png",
-        "./assets/p5/p5-title.png",
-        "./assets/p5/p5-1.png",
-        "./assets/p5/p5-2.png",
-        "./assets/p5/p5-3.png",
-        "./assets/p5/p5-4.png",
-        "./assets/p6/p6-bg.jpg",
-        "./assets/p6/p6-1.png",
-        "./assets/p6/p6-2.png",
-        "./assets/p6/p6-3.png",
-        "./assets/p6/p6-4.png",
-        "./assets/p6/p6-5.png",
-        "./assets/p6/p6-6.png",
-        "./assets/p6/p6-title.png",
-        "./assets/p7/p7-title.png",
-        "./assets/p7/p7-postcard.png",
-        "./assets/p7/p7-bg.jpg",
-        "./assets/technology-support.png",
-        "./assets/go.png",
-        "./assets/btn-details.png",
-        "./assets/btn-again.png",
-        "http://www.foshannews.net/js/jquery-1.12.3.min.js",
-        "http://www.foshannews.net/js/lodash.min.js",
-        // "http://www.foshannews.net/js/vue.min.js",
-        "http://www.foshannews.net/js/message.min.js",
-        "./assets/turn.min.js",
-        './assets/music.mp3'
-      ];
-    $(intros).each(function(i,e){
+    var resources = [
+      "./assets/cover/cover-bg.jpg",
+      "./assets/cover/cover-gif.gif",
+      "./assets/next.png",
+      "./assets/next-bg.png",
+      "./assets/p1/p1-bg.jpg",
+      "./assets/p1/p1-title.png",
+      "./assets/p1/p1-map.png",
+      "./assets/p1/p1-bottom.png",
+      "./assets/p1/p1gif.gif",
+      "./assets/p2/p2-bg.jpg",
+      "./assets/p2/p2gif.gif",
+      "./assets/p2/p2-title.png",
+      "./assets/p2/p2-4.png",
+      "./assets/p2/p2-3.png",
+      "./assets/p2/p2-2.png",
+      "./assets/p2/p2-1.png",
+      "./assets/p2/p2-word.png",
+      "./assets/p3/p3-bg.jpg",
+      "./assets/p3/p3-title.png",
+      "./assets/p3/p3-1.png",
+      "./assets/p3/p3-2.png",
+      "./assets/p3/p3-3.png",
+      "./assets/p3/p3-4.png",
+      "./assets/p4~p5-bg.jpg",
+      "./assets/p4/p4-title.png",
+      "./assets/p4/p4-1.png",
+      "./assets/p4/p4-2.png",
+      "./assets/p4/p4-3.png",
+      "./assets/p5/p5-title.png",
+      "./assets/p5/p5-1.png",
+      "./assets/p5/p5-2.png",
+      "./assets/p5/p5-3.png",
+      "./assets/p5/p5-4.png",
+      "./assets/p6/p6-bg.jpg",
+      "./assets/p6/p6-1.png",
+      "./assets/p6/p6-2.png",
+      "./assets/p6/p6-3.png",
+      "./assets/p6/p6-4.png",
+      "./assets/p6/p6-5.png",
+      "./assets/p6/p6-6.png",
+      "./assets/p6/p6-title.png",
+      "./assets/p7/p7-title.png",
+      "./assets/p7/p7-postcard.png",
+      "./assets/p7/p7-input.png",
+      "./assets/p7/p7-send.png",
+      "./assets/p7/p7-share.png",
+      "./assets/p7/p7-bg.jpg",
+      "./assets/technology-support.png",
+      "./assets/go.png",
+      "./assets/btn-details.png",
+      "./assets/btn-again.png",
+      "http://www.foshannews.net/js/jquery-1.12.3.min.js",
+      "http://www.foshannews.net/js/lodash.min.js",
+      // "http://www.foshannews.net/js/vue.min.js",
+      "http://www.foshannews.net/webapp/share/weixinapi.js",
+      "./assets/turn.min.js",
+      'http://res.wx.qq.com/open/js/jweixin-1.2.0.js',
+      './assets/music.mp3'
+    ];
+    $(intros).each(function (i, e) {
       resources.push(e.img);
-    })
+    });
     //预加载
     var loader = new resLoader({
       resources: resources,
-      onStart: function(total) {
+      onStart: function (total) {
         console.log("start:" + total);
       },
-      onProgress: function(current, total) {
+      onProgress: function (current, total) {
         var percent = parseInt(Math.round(current / total * 10000) / 100);
         // percent=percent>98?98:percent;
-        $('#loading .percent').text(percent+'%');
+        $('#loading .percent').text(percent + '%');
         // $('.progresstext').text(percent+'%');
       },
-      onComplete: function(total) {
+      onComplete: function (total) {
         completedJs();
         $("#loader").addClass("hidden");
         $(".start").removeClass("hidden");
@@ -333,7 +345,6 @@
     });
 
     loader.start();
-
   </script>
   <script src="./assets/main.js" remote="yes" ignoreapd="1"></script>
 
@@ -342,21 +353,22 @@
   <script>
     weixinapp.init();
     // 需要分享的内容，请放到ready里
+    var sharedata;
     wx.ready(function () {
       sharedata = {
-        <TRS_DOCUMENTS id="shareConfig-xqs">
-          title: '<TRS_DOCUMENT AUTOLINK="false" FIELD="doctitle"></TRS_DOCUMENT>',
-          desc: '<TRS_DOCUMENT AUTOLINK="false" FIELD="docabstract"></TRS_DOCUMENT>',
-          link: 'http://www.foshannews.net/zt/2017zt/wx/xqslxms/',
-          imgUrl: '<TRS_APPENDIX INDEX="0" AUTOLINK="FALSE" MODE="PIC" FIELD="_RECURL" UrlIsAbs="true" UPLOAD="true"></TRS_APPENDIX>',
+        <TRS_DOCUMENTS id = "shareConfig-xqs" >
+          title:'<TRS_DOCUMENT AUTOLINK="false" FIELD="doctitle"></TRS_DOCUMENT>',
+          desc:'<TRS_DOCUMENT AUTOLINK="false" FIELD="docabstract"></TRS_DOCUMENT>',
+          imgUrl:'<TRS_APPENDIX INDEX="0" AUTOLINK="FALSE" MODE="PIC" FIELD="_RECURL" UrlIsAbs="true" UPLOAD="true"></TRS_APPENDIX>',
         </TRS_DOCUMENTS>
+        link: 'http://www.foshannews.net/zt/2017zt/wx/xqslxms/',
         success: function () {},
         cancel: function () {}
       };
       wx.onMenuShareAppMessage(sharedata);
       wx.onMenuShareTimeline(sharedata);
+      wx.onMenuShareQQ(sharedata);
     });
-
   </script>
 
 </body>

@@ -68,8 +68,9 @@ var books = [
   {
     name: "p7",
     content: [
-      $("#p7>.title"),
       $("#p7>.postcard"),
+      $("#p7>.title"),
+      $("#p7>.input"),
       $("#p7>.sec-btn"),
       $("#p7>.technology")
     ]
@@ -212,14 +213,17 @@ function completedJs() {
   });
 
   //详细介绍页
-  function showIntro(index){
-    $('.mask .pic img').attr('src' , _.find(intros, function(val) {
-      return parseInt(val.index) === index;
-    }).img);
-    $('.mask .word .intro').each(function(i,ele){
-      if($(ele).hasClass('intro'+index)){
+  function showIntro(index) {
+    $(".mask .pic img").attr(
+      "src",
+      _.find(intros, function(val) {
+        return parseInt(val.index) === index;
+      }).img
+    );
+    $(".mask .word .intro").each(function(i, ele) {
+      if ($(ele).hasClass("intro" + index)) {
         $(ele).show();
-      } else{
+      } else {
         $(ele).hide();
       }
     });
@@ -237,7 +241,7 @@ function completedJs() {
   ];
   _.each(btnArgs, function(val, i) {
     $("body").on("touchstart", val, function() {
-      showIntro(i+1);
+      showIntro(i + 1);
       $(".mask").show();
     });
   });
@@ -252,8 +256,50 @@ function completedJs() {
     }, 800);
   });
 
+  //寄出btn
+  var haveSet = false;
+  $("body")
+    .on("touchstart", "a.btn-send", function() {
+      // console.log($('#p7 .input')[0].value);
+      try {
+        if (!haveSet) {
+          wx.ready(function() {
+            sharedata.title =
+              "你的好友" + $("#p7 .input")[0].value + "送给你一张西樵山理学名山明信片";
+            sharedata.success = function() {
+              hideShare();
+            };
+            sharedata.cancel = function() {
+              hideShare();
+            };
+            wx.onMenuShareAppMessage(sharedata);
+            wx.onMenuShareTimeline(sharedata);
+            wx.onMenuShareQQ(sharedata);
+          });
+          haveSet = true;
+        }
+        showShare();
+      } catch (error) {
+        console.log(error);
+      }
+    })
+    .on("touchend", "div.share", function() {
+      hideShare();
+    }); //分享页返回
 
-
+  //显示share
+  function showShare() {
+    $(".share").show();
+  }
+  //hide share
+  function hideShare() {
+    $(".share").addClass("fadeOut");
+    _.delay(function() {
+      $(".share")
+        .css("display", "none")
+        .removeClass("fadeOut");
+    }, 800);
+  }
 
   //结束loading
   // var percent = 99;
@@ -261,7 +307,7 @@ function completedJs() {
   //   percent++;
   //   $("#loading .percent").text(percent + "%");
   //   if (percent === 100) {
-      $("#loading").fadeOut();
+  $("#loading").fadeOut();
   //   }
   // }, 500);
 }
@@ -272,15 +318,15 @@ function completedJs() {
 // });
 
 /*音乐*/
-var audio = $("#music");
+var audio = document.getElementById("music");
 var isPlaying = false;
 function playAudio() {
-  audio[0].play();
+  audio.play();
   isPlaying = true;
 }
 
 function pauseAudio() {
-  audio[0].pause();
+  audio.pause();
   isPlaying = false;
 }
 
@@ -289,7 +335,7 @@ $(function() {
     "WeixinJSBridgeReady",
     function() {
       WeixinJSBridge.invoke("getNetworkType", {}, function(e) {
-        network = e.err_msg.split(":")[1]; //结果在这里
+        // console.log(e.err_msg); //结果在这里
         playAudio();
       });
     },
